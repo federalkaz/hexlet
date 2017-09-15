@@ -5,7 +5,7 @@ function reverse($str)
 
     $res = '';
 
-    for ($i = strlen($str)-1; $i >= 0; $i--){
+    for ($i = strlen($str)-1; $i >= 0; $i--) {
         $res .= $str{$i};
     }
 
@@ -13,4 +13,4 @@ function reverse($str)
 
 }
 
-echo reverse('hello, world!');
+echo reverse('-123');
