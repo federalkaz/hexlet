@@ -16,3 +16,18 @@ function factorial($num)
     return $iter($num);
     // END
 }
+
+/*
+function factorial($num)
+{
+
+    if ($num === 0) {
+        return 1;
+    }
+
+    return $num * factorial($num - 1);
+
+}
+
+echo factorial(4);
+ */
