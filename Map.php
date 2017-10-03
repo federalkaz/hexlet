@@ -4,15 +4,12 @@
     Подсказки:
     Функция reverse переворачивает список. Она доступна в скрипте.
  */
-function map($func, $list)
-{
-    // BEGIN (write your solution here)
-    function iter($func, $list)
-    {
-        if ($list == null) {
-            return null;
-        }
-        return iter($func($list));
+
+$iter = function ($list, $acc) use (&$iter, $func) {
+    if ($list === null) {
+        return reverse($acc);
     }
-    // END
-}
+
+    return $iter(cdr($list), cons($func(car($list)), $acc));
+};
+return $iter($list, null);
