@@ -42,16 +42,26 @@ function findPrimitiveBox(pair)
     function iter(pair)
     {
 
-        if (isPair(pair) === false) {
-            if (car(pair) === null) {
-                return iter(pair);
-            } else {
-                return iter(pair);
-            }
+        if ((isPair(car(pair)) === false) && (isPair(cdr(pair)) === false)) {
+            return (pair);
         } else {
-            return pair;
+            if (car(pair) !== null) {
+                return iter(car(pair));
+            } else {
+                return iter(cdr(pair));
+            }
+        }
+        /*
+        const first = car(pair);
+        const last = cdr(pair);
+
+        if (!isPair(first) && !isPair(last)) {
+          return pair;
         }
 
+        const next = isPair(first) ? first : last;
+        return findPrimitiveBox(next);
+        */
     }
 
     return iter(pair);
